@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//this class is responsible for creating connection
+
 public class CreateConnection {
 	
 	static Connection connection=null;
