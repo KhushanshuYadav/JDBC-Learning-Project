@@ -7,6 +7,8 @@ import java.sql.SQLException;
 //this class is responsible for interaction with the database i.e
 //all interaction logic here
 
+//generally DAO is a interface and is implemented by multiple classes
+
 public class StudentDAO {
 	
 	public static void insert(Student st) throws SQLException {
@@ -25,8 +27,16 @@ public class StudentDAO {
 		
 	}
 	
-	public static void delete(Student st) {
+	public static void delete(int id) throws SQLException {
 		
+        Connection conn=CreateConnection.giveConnection();
+		
+		String q=Queries.deleteQuery;
+		PreparedStatement pstmt=conn.prepareStatement(q);
+		
+		pstmt.setInt(1, id);
+		pstmt.executeUpdate();
+		System.out.println("Data deletion done");
 		
 	}
     

@@ -57,6 +57,10 @@ public class Start {
 			}
 			else if(c==2) {
 				//TODO delete student
+				System.out.println("Enter student's id");
+				int id= Integer.parseInt(bReader.readLine());
+				StudentDAO.delete(id);
+				
 				
 			}
 			else if(c==3) {
