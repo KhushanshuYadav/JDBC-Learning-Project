@@ -2,6 +2,7 @@ package com.student.manage;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 //this class is responsible for interaction with the database i.e
@@ -56,8 +57,31 @@ public class StudentDAO {
 		
 	}
     
-	public static void selectAll(Student st) {
+	public static void selectAll() throws SQLException {
 		
+        Connection conn=CreateConnection.giveConnection();
+		
+		String q=Queries.selectQuery;
+		PreparedStatement pstmt=conn.prepareStatement(q);
+		
+		//data is obtained as result set object we need to process it
+		ResultSet resultSet=pstmt.executeQuery();
+		
+		while(resultSet.next()){
+			
+			int id=resultSet.getInt(1);
+			String name=resultSet.getString("sname");
+			String city=resultSet.getString("scity");
+			String phone=resultSet.getString("sphone");
+			
+			System.out.println("Id "+id+" Name: "+name+" city: "+city+" phone: "+phone);
+			
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+		
+		    
+		}
+		
+		System.out.println("Complete");
 		
 	}
 

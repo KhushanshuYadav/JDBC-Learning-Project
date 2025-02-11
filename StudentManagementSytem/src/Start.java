@@ -76,6 +76,8 @@ public class Start {
 			}
 			else if(c==4) {
 				//TODO show all
+				StudentDAO.selectAll();
+				
 				
 			}
 			else if(c==5) {
