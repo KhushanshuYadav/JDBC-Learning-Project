@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.student.manage.Student;
+
 
 
 public class Start {
@@ -26,13 +28,28 @@ public class Start {
 			System.out.println("Enter 1 to add student details");
 			System.out.println("Enter 2 to delete student details");
 			System.out.println("Enter 3 to update student details");
-			System.out.println("Enter 4 to end opeartions");
+			System.out.println("Enter 4 to show all students details");
+			
+			System.out.println("Enter 5 to end opeartions");
 			
 			int c= Integer.parseInt(bReader.readLine());
 			
 			
 			if(c==1) {
 				//TODO add student
+				System.out.println("Enter student's name");
+				String name=bReader.readLine();
+				
+				System.out.println("Enter student's phone");
+				String phone=bReader.readLine();
+				
+				System.out.println("Enter student's city");
+				String city=bReader.readLine();
+				
+				Student st=new Student(name,phone,city);
+				
+				
+				
 				
 			}
 			else if(c==2) {
@@ -44,6 +61,10 @@ public class Start {
 				
 			}
 			else if(c==4) {
+				//TODO show all
+				
+			}
+			else if(c==5) {
 				break;
 				
 			}
