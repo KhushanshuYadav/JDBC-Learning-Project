@@ -7,12 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.student.manage.Student;
+import com.student.manage.StudentDAO;
 
 
 
 public class Start {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws NumberFormatException, IOException, SQLException {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Hello,");
@@ -48,6 +49,8 @@ public class Start {
 				
 				Student st=new Student(name,phone,city);
 				
+				
+				StudentDAO.insert(st);
 				
 				
 				
