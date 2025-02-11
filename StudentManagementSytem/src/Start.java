@@ -65,6 +65,13 @@ public class Start {
 			}
 			else if(c==3) {
 				//TODO update student
+				System.out.println("Enter student's id");
+				int id= Integer.parseInt(bReader.readLine());
+				
+				System.out.println("Enter student's name");
+				String changeName=bReader.readLine();
+
+				StudentDAO.updateName(id,changeName);
 				
 			}
 			else if(c==4) {

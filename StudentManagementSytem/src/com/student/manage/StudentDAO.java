@@ -40,7 +40,18 @@ public class StudentDAO {
 		
 	}
     
-	public static void update(Student st) {
+	public static void updateName(int id,String name) throws SQLException {
+		
+        Connection conn=CreateConnection.giveConnection();
+		
+		String q=Queries.updateQuery;
+		PreparedStatement pstmt=conn.prepareStatement(q);
+		
+		pstmt.setString(1,name);
+		pstmt.setInt(2, id);
+		
+		pstmt.executeUpdate();
+		System.out.println("Data updation done");
 		
 		
 	}
